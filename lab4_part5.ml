@@ -172,7 +172,7 @@ the string will be made up of alphanumeric characters only.
 ......................................................................*)
 module IntStringSerialize =
   struct
-    type t = int * string
+    type t = (int * string)
     let serialize n = "(" ^ (string_of_int (fst n)) ^ ",'" ^ (snd n) ^ "'')"
   end ;;
 
