@@ -117,10 +117,10 @@ module MakeStack (Element: SERIALIZE) : (STACK with type element = Element.t) =
       | h :: tl -> (h, tl)
 
     let top (s: stack) : element =
-      List.hd s
+      fst (pop_helper s)
 
     let pop (s: stack) : stack =
-      failwith "not implemented"
+      snd (pop_helper s)
 
     let rec map (f: element -> element) (s: stack) : stack =
       match s with
